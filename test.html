@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquerycookie.js"></script>
+</head>
+
+<body>
+
+    <button id="btnCookie1">Add cookie 1</button>
+    <button id="btnCookie2">Add cookie 2</button>
+    <button id="btnShowCookies">Show cookies</button>
+    <button id="btnShowCookie1">Show cookie1</button>
+    <button id="btnDelCookie1">Delete cookie 1</button>
+    <button id="btnDelCookie2">Delete cookie 2</button>
+    <button id="btnExistCookie2">Check if cookie2 exists</button>
+    <script>
+        var thirtyDaysInSecond = 30 * 24 * 3600;
+        $('#btnCookie1').click(function () {
+            $.cookie.add(new Cookie('username', 'hoaftq', thirtyDaysInSecond, '/'));
+        });
+
+        $('#btnCookie2').click(function () {
+            $.cookie.add('password', 'Password', thirtyDaysInSecond, '/');
+        });
+
+        $('#btnShowCookies').click(function () {
+            alert(JSON.stringify($.cookie.get()));
+        });
+
+        $('#btnShowCookie1').click(function () {
+            alert($.cookie.get('username'));
+        });
+
+        $('#btnDelCookie1').click(function () {
+            $.cookie.del('username', '/');
+        });
+
+        $('#btnDelCookie2').click(function () {
+            $.cookie.del('password', '/');
+        });
+
+        $('#btnExistCookie2').click(function () {
+            if ($.cookie.exist('password')) {
+                alert('Cookie2 exists');
+            } else {
+                alert('Cookie2 does not exist');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
