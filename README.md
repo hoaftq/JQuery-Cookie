@@ -63,4 +63,4 @@ See [JQuery-Cookie examples](test.html) for more details on how to use this libr
   });
   ```
   
-The [248Game repository](https://github.com/hoaftq/248Game/controller.js) also uses this library to store the highest score locally
+The [248Game repository](https://github.com/hoaftq/248Game/blob/master/controller.js) also uses this library to store the highest score locally
